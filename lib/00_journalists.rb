@@ -10,7 +10,7 @@ end
 
 def shortest_account
   journalists_tab = array
-  puts "Le journaliste avec le compte twitter le plus court est #{journalists_twitter_handles.min{|a,b| a.size <=> b.size }} !"
+  puts "Le journaliste avec le compte twitter le plus court est #{journalists_tab.min{|a,b| a.size <=> b.size }} !"
 end
 
 def array_five_characters   #Combien y-a-t'il de handle contenant 5 caractères (le @ ne compte pas pour un caractère)
@@ -45,12 +45,10 @@ end
 
 def handle_size
   journalists_tab = array
-  hash = {}
-  journalists_twitter_handles.each do |i, j|
-     j = i.length.to_i
-     hash = { i => j }
-  end
-  puts hash
+  sorted =  journalists_tab.sort_by!{|a| a.size}
+  puts " "
+  puts " Liste triée par taille: {#{sorted}}"
+  puts " "
 end
 
 def handle_position
@@ -59,9 +57,15 @@ def handle_position
 end
 
 #Sors-moi une répartition des handle par taille de ces derniers (nombre de handle avec 1 caractère, nombre de handle avec 2 caractères, nombre de handle avec 3 caractères, etc)
-def handle_short_to_strong
+#def handle_short_to_strong
+#  journalists_tab = array
+#  a = 1
+#  b = 1
+#  while a < 50
+#    journalists_tab.each do |i|
+#    b[] <<
 
-end
+#end
 
 def perform
   count
